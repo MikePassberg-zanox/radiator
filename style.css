@@ -1,0 +1,30 @@
+div.projectoverview div.project div.failedbuilds{
+	background:#FF0000;
+}
+
+div.projectoverview div.project div.allsuccess{
+	background:#00FF00;
+}
+
+div.projectoverview div.project div{
+	float: left;
+	margin-right: .5em;
+	/*margin-right: .5em;*/
+}
+
+div.projectoverview div.project{
+	clear: both;
+}
+
+div.projectoverview{
+	clear: both;
+}
+
+div.infobox{
+	
+	clear: both;
+}
+div.infobox div{
+	margin-right: 1em;
+	float: left;
+}
