@@ -28,7 +28,7 @@ function loaddata()
 		infobox.append(successcounttotal).append(failcounttotal).append(buildcounttotal).append(disabledcounttotal);
 		$.each(groups, function (key, val)
 			{
-				projectdiv = $("<div/>",{"class": "project"})
+				projectdiv = $("<div/>",{"class": (val.red_anime>0 || val.blue_anime >0 || val.yellow_anime > 0) ? "project" : "project_building"})
 				domain = $("<div/>",{"class": classes[(val.red > 0 || val.red_anime > 0)], html: key})
 				counts = $("<div/>",{"class": "counts"})
 				totaljobcount = $("<div/>", {"class": "total",html: val.projects.length})

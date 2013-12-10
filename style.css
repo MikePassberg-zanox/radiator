@@ -1,16 +1,33 @@
+@keyframes myfirst
+{
+from {background:red;}
+to {background:yellow;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+from {background:red;}
+to {background:yellow;}
+}
+
 body { font-family: Arial; font-size: 5em;}
 
-div.projectoverview div.project div.failedbuilds{
+div.projectoverview{
+	width: 100%;
+}
+
+div.projectoverview div div.failedbuilds{
 	background:#FF0000;
 }
 
-div.projectoverview div.project div.allsuccess{
+div.projectoverview div div.allsuccess{
 	background:#00FF00;
 }
 
-div.projectoverview div.project div{
+div.projectoverview div div{
 	float: left;
 	margin-right: .5em;
+	margin-bottom: 0.05em;
 	/*margin-right: .5em;*/
 }
 
@@ -18,8 +35,19 @@ div.projectoverview div.project{
     position: relative;
     display: block;
     min-width:400px;
-    white-space: nowrap;
+    height:100%;
 	clear: both;
+}
+
+div.projectoverview div.project_building{
+    position: relative;
+    display: block;
+    min-width:400px;
+	clear: both;
+	background:black;
+	height:auto;
+	animation:myfirst 5s;
+	-webkit-animation:myfirst 5s; /* Safari and Chrome */
 }
 
 div.projectoverview{
@@ -28,11 +56,15 @@ div.projectoverview{
 }
 
 div.infobox{
+	background-color:#A0A0A0;
 	position: fixed; bottom: 24px; left: 350px;
 	clear: both;
 }
 div.infobox div{
-	margin-right: 1em;
+	/*margin-right: 1em;*/
+	margin-left: 1em;
+	margin-top: 0.07em;
+	margin-bottom: 0.07em;
 	float: left;
 }
 
