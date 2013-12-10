@@ -1,3 +1,5 @@
+body { font-family: Arial; font-size: 5em;}
+
 div.projectoverview div.project div.failedbuilds{
 	background:#FF0000;
 }
@@ -13,18 +15,45 @@ div.projectoverview div.project div{
 }
 
 div.projectoverview div.project{
+    position: relative;
+    display: block;
+    min-width:400px;
+    white-space: nowrap;
 	clear: both;
 }
 
 div.projectoverview{
+	position: absolute; width: -200px; height: 240px;
 	clear: both;
 }
 
 div.infobox{
-	
+	position: fixed; bottom: 24px; left: 350px;
 	clear: both;
 }
 div.infobox div{
 	margin-right: 1em;
 	float: left;
+}
+
+div.success {
+	background:#00FF00;
+}
+div.failed {
+	background:#FF0000;
+}
+div.total {
+	background:#C0C0C0
+}
+div.successcounttotal {
+	background:#808080
+}
+div.failcounttotal {
+	background:#D00000
+}
+div.buildcounttotal {
+	background:#FFFF00
+}
+div.disabledcounttotal {
+	background:#0000FF
 }
