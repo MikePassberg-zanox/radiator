@@ -1,57 +1,65 @@
 @keyframes myfirst
 {
-from {background:red;}
-to {background:yellow;}
+0% {filter:alpha(opacity=100)}
+50% {filter:alpha(opacity=1)}
+100% {filter:alpha(opacity=100)}
 }
 
 @-webkit-keyframes myfirst /* Safari and Chrome */
 {
-from {background:red;}
-to {background:yellow;}
+0% {opacity:1}
+50% {opacity:.3}
+100% {opacity:1}
+
 }
 
 body { font-family: Arial; font-size: 5em;}
 
-div.projectoverview{
-	width: 100%;
+div.projectoverview > div{
+	overflow:hidden;
+	clear: both;
+	/*min-width:400px;*/
+	white-space:nowrap;
+
 }
 
-div.projectoverview div div.failedbuilds{
+div.projectoverview > div > div.failedbuilds{
 	background:#FF0000;
 }
 
-div.projectoverview div div.allsuccess{
+div.projectoverview > div > div.allsuccess{
 	background:#00FF00;
 }
 
-div.projectoverview div div{
-	float: left;
+div.projectoverview > div div{
+	/*float: left;*/
+	display: inline-block;
 	margin-right: .5em;
 	margin-bottom: 0.05em;
+
 	/*margin-right: .5em;*/
 }
 
-div.projectoverview div.project{
-    position: relative;
-    display: block;
-    min-width:400px;
-    height:100%;
-	clear: both;
+div.projectoverview > div.project{
+  /*position: relative;*/
+  display: block;
+  /*min-width:400px;*/
+	
 }
 
-div.projectoverview div.project_building{
-    position: relative;
-    display: block;
-    min-width:400px;
-	clear: both;
-	background:black;
-	height:auto;
-	animation:myfirst 5s;
-	-webkit-animation:myfirst 5s; /* Safari and Chrome */
+div.projectoverview > div.project_building{
+  /*position: relative;*/
+  display: block;
+  /*min-width:400px;*/
+}
+
+div.projectoverview > div.project_building > div:first-child{ 
+	animation:myfirst 10s;
+	-webkit-animation:myfirst 10s ease-out infinite; /* Safari and Chrome */
 }
 
 div.projectoverview{
-	position: absolute; width: -200px; height: 240px;
+	/*position: absolute; width: -200px; height: 240px;*/
 	clear: both;
 }
 
@@ -77,6 +85,7 @@ div.failed {
 div.total {
 	background:#C0C0C0
 }
+
 div.successcounttotal {
 	background:#808080
 }

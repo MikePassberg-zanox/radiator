@@ -4,7 +4,7 @@ var re = /^([A-Z]*)-(.*)/;
 
 function initialize(){
 	loaddata();
-	//setInterval(function(){loaddata();},1000);
+	setInterval(function(){loaddata();},10000);
 }
 
 function loaddata()
