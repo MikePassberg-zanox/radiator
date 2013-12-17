@@ -24,7 +24,8 @@ function loaddata()
 		var failcounttotal = $("<div/>", {"class": "failcounttotal", html: 0});
 		var buildcounttotal = $("<div/>", {"class": "buildcounttotal", html: 0});
 		var disabledcounttotal = $("<div/>", {"class": "disabledcounttotal", html: 0});
-		
+		var showHideButton = $('<input>', {"style": "position: fixed;top: 10px;right: 30px;width: 80px;height: 25px;", "id": "offbutton", "type": "button", "value": "Show/Hide", "onClick": "toggleButton()"});
+
 		infobox.append(successcounttotal).append(failcounttotal).append(buildcounttotal).append(disabledcounttotal);
 		$.each(groups, function (key, val)
 			{
@@ -35,10 +36,10 @@ function loaddata()
 				failedjobcount = $("<div/>",{"class": "failed", html: ($.isNumeric(val.red) ? val.red : 0 + $.isNumeric(val.red_anime) ? val.red_anime : 0)})
 				successjobcount = $("<div/>", {"class": "success", html: ($.isNumeric(val.blue) ? val.blue : 0 + $.isNumeric(val.blue_anime) ? val.blue_anime : 0)})
 
-				counts.append(totaljobcount).append(failedjobcount).append(successjobcount)
-				projectdiv.append(domain).append(counts)
+				counts.append(totaljobcount).append(failedjobcount).append(successjobcount);
+				projectdiv.append(domain).append(counts);
 
-				containerdiv.append(projectdiv)
+				containerdiv.append(projectdiv);
 
 				successcounttotal.html(function(index,oldhtml){return ($.isNumeric(val.blue) ? val.blue : 0) + parseInt(oldhtml)})
 				failcounttotal.html(function(index,oldhtml){return ($.isNumeric(val.red) ? val.red : 0) + parseInt(oldhtml)})
@@ -50,9 +51,10 @@ function loaddata()
 				//jobs.push("<div class=\"project\"><div class=\""+ classes[(val.red > 0)] +"\">"+ key + "</div><div>" + val.projects.length + "</div></div>");
 			}
 		);
-		$("body").empty();
+		//$("body").empty();
 		containerdiv.appendTo("body");
-		infobox.appendTo("body")
+		infobox.appendTo("body");
+		showHideButton.appendTo("body");
 	}, "jsonp");
 return
 }
@@ -79,4 +81,8 @@ function groupdata(data)
 	)
 	//console.log(groups);
 	return groups
+}
+
+function toggleButton () {
+  $("div.infobox").toggle();
 }

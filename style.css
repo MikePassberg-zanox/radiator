@@ -1,71 +1,82 @@
 @keyframes myfirst
 {
-from {background:red;}
-to {background:yellow;}
+0% {opacity:1;}
+50%{opacity:.5;}
+100%{opacity:1;}
 }
 
 @-webkit-keyframes myfirst /* Safari and Chrome */
 {
-from {background:red;}
-to {background:yellow;}
+0% {opacity:1;}
+50%{opacity:.5;}
+100%{opacity:1;}
 }
 
-body { font-family: Arial; font-size: 5em;}
+body{
+	min-height: 1415px;
+	font-family: Arial; font-size: 5em;
+}
 
 div.projectoverview{
 	width: 100%;
 }
 
-div.projectoverview div div.failedbuilds{
+div.projectoverview > div div{
+	border-radius: 10px;
+}
+
+div.failedbuilds{
 	background:#FF0000;
 }
 
-div.projectoverview div div.allsuccess{
+div.allsuccess{
 	background:#00FF00;
 }
 
-div.projectoverview div div{
-	float: left;
+div.projectoverview > div div{
+	/*float: left;*/
+	display:inline-block;
+	
+
 	margin-right: .5em;
-	margin-bottom: 0.05em;
-	/*margin-right: .5em;*/
 }
 
-div.projectoverview div.project{
-    position: relative;
-    display: block;
-    min-width:400px;
-    height:100%;
-	clear: both;
-}
-
-div.projectoverview div.project_building{
-    position: relative;
+div.projectoverview  > div{
+	margin-bottom: .1em;
+	position: relative;
     display: block;
     min-width:400px;
 	clear: both;
-	background:black;
 	height:auto;
-	animation:myfirst 5s;
-	-webkit-animation:myfirst 5s; /* Safari and Chrome */
+	white-space: nowrap;
+}
+
+div.project_building > div:first-child{
+    
+	animation:myfirst 5s ease-in-out infinite;
+	-webkit-animation:myfirst 5s ease-in-out infinite; /* Safari and Chrome */
 }
 
 div.projectoverview{
-	position: absolute; width: -200px; height: 240px;
+	/*position: absolute; width: -200px; height: 240px;*/
 	clear: both;
+	margin-bottom: 1em;
 }
 
 div.infobox{
 	background-color:#A0A0A0;
-	position: fixed; bottom: 24px; left: 350px;
+	position: fixed; bottom: 10px; left: 90px;
 	clear: both;
 }
-div.infobox div{
-	/*margin-right: 1em;*/
+
+div.infobox > div{
+	margin-right: 1em;
 	margin-left: 1em;
-	margin-top: 0.07em;
-	margin-bottom: 0.07em;
+	margin-top: 0.1em;
+	margin-bottom: 0.1em;
+	padding: .3em;
 	float: left;
+	border-radius: 10px;
 }
 
 div.success {
@@ -75,17 +86,17 @@ div.failed {
 	background:#FF0000;
 }
 div.total {
-	background:#C0C0C0
+	background:#C0C0C0;
 }
 div.successcounttotal {
-	background:#808080
+	background:rgba(0,255,0,.8);
 }
 div.failcounttotal {
-	background:#D00000
+	background:rgba(255,0,0,.8);
 }
 div.buildcounttotal {
-	background:#FFFF00
+	background:rgba(255,255,0,.8);
 }
 div.disabledcounttotal {
-	background:#0000FF
+	background:rgba(0,0,255,.8);
 }
