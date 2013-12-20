@@ -12,13 +12,9 @@
 100%{opacity:1;}
 }
 
-body{
-	min-height: 1415px;
-	font-family: Arial; font-size: 5em;
-}
 
-div.projectoverview{
-	width: 100%;
+div.projectoverview, div.infobox {
+    font-family: Arial; font-size: 3.87em;
 }
 
 div.projectoverview > div div{
@@ -26,11 +22,11 @@ div.projectoverview > div div{
 }
 
 div.failedbuilds{
-	background:#FF0000;
+	background:#ED0000;
 }
 
 div.allsuccess{
-	background:#00FF00;
+	background:#00DF00;
 }
 
 div.projectoverview > div div{
@@ -52,7 +48,7 @@ div.projectoverview  > div{
 }
 
 div.project_building > div:first-child{
-    
+    padding: 5px;
 	animation:myfirst 5s ease-in-out infinite;
 	-webkit-animation:myfirst 5s ease-in-out infinite; /* Safari and Chrome */
 }
@@ -60,18 +56,18 @@ div.project_building > div:first-child{
 div.projectoverview{
 	/*position: absolute; width: -200px; height: 240px;*/
 	clear: both;
-	margin-bottom: 1em;
 }
 
 div.infobox{
 	background-color:#A0A0A0;
-	position: fixed; bottom: 10px; left: 90px;
+	position: fixed; bottom: 0px; left: 0px;
 	clear: both;
+	width: 100%;
 }
 
 div.infobox > div{
-	margin-right: 1em;
-	margin-left: 1em;
+	margin-right: 3em;
+	margin-left: 3em;
 	margin-top: 0.1em;
 	margin-bottom: 0.1em;
 	padding: .3em;
@@ -80,23 +76,23 @@ div.infobox > div{
 }
 
 div.success {
-	background:#00FF00;
+	background:#00ED00;
 }
 div.failed {
-	background:#FF0000;
+	background:#FE0000;
 }
 div.total {
-	background:#C0C0C0;
+	background:#B0B0B0;
 }
 div.successcounttotal {
-	background:rgba(0,255,0,.8);
+	background:rgba(0,200,0,.8);
 }
 div.failcounttotal {
-	background:rgba(255,0,0,.8);
+	background:rgba(230,0,0,.8);
 }
 div.buildcounttotal {
-	background:rgba(255,255,0,.8);
+	background:rgba(235,235,0,.8);
 }
 div.disabledcounttotal {
-	background:rgba(0,0,255,.8);
+	background:rgba(0,0,235,.8);
 }
