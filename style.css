@@ -1,61 +1,56 @@
 @keyframes myfirst
 {
-0% {filter:alpha(opacity=100)}
-50% {filter:alpha(opacity=1)}
-100% {filter:alpha(opacity=100)}
+0% {opacity:1;}
+50%{opacity:.5;}
+100%{opacity:1;}
 }
 
 @-webkit-keyframes myfirst /* Safari and Chrome */
 {
-0% {opacity:1}
-50% {opacity:.3}
-100% {opacity:1}
-
+0% {opacity:1;}
+50%{opacity:.5;}
+100%{opacity:1;}
 }
 
-body { font-family: Arial; font-size: 5em;}
 
-div.projectoverview > div{
-	overflow:hidden;
-	clear: both;
-	/*min-width:400px;*/
-	white-space:nowrap;
-
+div.projectoverview, div.infobox {
+    font-family: Arial; font-size: 3.87em;
 }
 
-div.projectoverview > div > div.failedbuilds{
-	background:#FF0000;
+div.projectoverview > div div{
+	border-radius: 10px;
 }
 
-div.projectoverview > div > div.allsuccess{
-	background:#00FF00;
+div.failedbuilds{
+	background:#ED0000;
+}
+
+div.allsuccess{
+	background:#00DF00;
 }
 
 div.projectoverview > div div{
 	/*float: left;*/
-	display: inline-block;
-	margin-right: .5em;
-	margin-bottom: 0.05em;
-
-	/*margin-right: .5em;*/
-}
-
-div.projectoverview > div.project{
-  /*position: relative;*/
-  display: block;
-  /*min-width:400px;*/
+	display:inline-block;
 	
+
+	margin-right: .5em;
 }
 
-div.projectoverview > div.project_building{
-  /*position: relative;*/
-  display: block;
-  /*min-width:400px;*/
+div.projectoverview  > div{
+	margin-bottom: .1em;
+	position: relative;
+    display: block;
+    min-width:400px;
+	clear: both;
+	height:auto;
+	white-space: nowrap;
 }
 
-div.projectoverview > div.project_building > div:first-child{ 
-	animation:myfirst 10s;
-	-webkit-animation:myfirst 10s ease-out infinite; /* Safari and Chrome */
+div.project_building > div:first-child{
+    padding: 5px;
+	animation:myfirst 5s ease-in-out infinite;
+	-webkit-animation:myfirst 5s ease-in-out infinite; /* Safari and Chrome */
 }
 
 div.projectoverview{
@@ -65,36 +60,39 @@ div.projectoverview{
 
 div.infobox{
 	background-color:#A0A0A0;
-	position: fixed; bottom: 24px; left: 350px;
+	position: fixed; bottom: 0px; left: 0px;
 	clear: both;
+	width: 100%;
 }
-div.infobox div{
-	/*margin-right: 1em;*/
-	margin-left: 1em;
-	margin-top: 0.07em;
-	margin-bottom: 0.07em;
+
+div.infobox > div{
+	margin-right: 3em;
+	margin-left: 3em;
+	margin-top: 0.1em;
+	margin-bottom: 0.1em;
+	padding: .3em;
 	float: left;
+	border-radius: 10px;
 }
 
 div.success {
-	background:#00FF00;
+	background:#00ED00;
 }
 div.failed {
-	background:#FF0000;
+	background:#FE0000;
 }
 div.total {
-	background:#C0C0C0
+	background:#B0B0B0;
 }
-
 div.successcounttotal {
-	background:#808080
+	background:rgba(0,200,0,.8);
 }
 div.failcounttotal {
-	background:#D00000
+	background:rgba(230,0,0,.8);
 }
 div.buildcounttotal {
-	background:#FFFF00
+	background:rgba(235,235,0,.8);
 }
 div.disabledcounttotal {
-	background:#0000FF
+	background:rgba(0,0,235,.8);
 }
